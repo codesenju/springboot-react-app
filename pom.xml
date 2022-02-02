@@ -79,7 +79,7 @@
 
                 <configuration>
                     <nodeVersion>v16.13.2</nodeVersion>
-                    <workingDirectory>src/main/frontend</workingDirectory>
+                    <workingDirectory>${basedir}/frontend</workingDirectory>
                 </configuration>
 
             </plugin>
@@ -94,7 +94,7 @@
                         <configuration>
 							<target>
 								<copy todir="${basedir}/target/classes/static">
-								<fileset dir="${basedir}/src/main/frontend/build" />
+								<fileset dir="${basedir}/frontend/build" />
 								</copy>
 							</target>
 						</configuration>
