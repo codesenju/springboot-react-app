@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-react-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-boot-react-frontend
+  template:
+    metadata:
+      labels:
+        app: spring-boot-react-frontend
+    spec:
+      containers:
+      - name: spring-boot-react-frontend
+        image: springboot-react-app_react
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-react-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: spring-boot-react-frontend

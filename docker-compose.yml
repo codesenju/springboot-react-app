@@ -1,0 +1,9 @@
+version: "3"
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring-boot-react-app
+    ports:
+      - 80:8080
