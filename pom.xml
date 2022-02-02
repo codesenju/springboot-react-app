@@ -55,6 +55,17 @@
                     </execution>
 
                     <execution>
+                        <id>Set npm proxy</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>config set registry http://fcb-rbljavatools.fnb.co.za:8081/nexus/repository/npm-proxy/</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
                         <id>npm install all dependancies of our react app</id>
                         <goals>
                             <goal>npm</goal>
@@ -105,7 +116,7 @@
                 </executions>
             </plugin>
 
-
+    
 		</plugins>
 	</build>
 
